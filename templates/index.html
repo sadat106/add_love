@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f6f8fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #container {
+            text-align: center;
+        }
+
+        .heart {
+            width: 100px;
+            height: 100px;
+            background-color: #e25555;
+            position: relative;
+            display: inline-block;
+            transform: rotate(-45deg);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            width: 100px;
+            height: 100px;
+            background-color: #e25555;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart:before {
+            top: -50px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 50px;
+            top: 0;
+        }
+
+        .heart:hover {
+            transform: rotate(-45deg) scale(1.2);
+        }
+
+        .counter {
+            font-size: 2em;
+            margin-top: 20px;
+            color: #24292e;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="heart" onclick="addLove()"></div>
+        <div class="counter" id="counter">0 Loves</div>
+    </div>
+    <script src="../static/script.js"></script>
+</body>
+</html>
